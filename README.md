@@ -17,8 +17,10 @@ Step 1: Clone the repository
 
 Step 2: Build Docker Image
 
-`cd StormGUI`
-`docker build -t storm_gui:latest .`
+```
+cd StormGUI
+docker build -t storm_gui:latest .
+```
 
 Step 3: Set Working Directory
 
