@@ -1018,7 +1018,8 @@
 }
 
 .wi-direction-up:before {
-    content: "\f058"
+    content: "\f058";
+    font-size: 19px;
 }
 
 .wi-direction-up-right:before {
