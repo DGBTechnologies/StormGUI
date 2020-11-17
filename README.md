@@ -19,40 +19,34 @@ Step 1: Clone the repository
 git clone https://github.com/DGBTechnologies/StormGUI.git
 ```
 
-Step 2: Set License Key
-
-```
-export LICENSE_KEY=JMKHA-XWOTZ-AOHGR-AIJNL
-```
-
-
-Step 3: Set Working Directory
-
-```
-export WORK_DIR=$PWD
-```
-
-
-Step 4: Build Docker Image
+Step 2: Build Docker Image
 
 ```
 cd StormGUI
 docker build -t storm_gui:latest .
 ```
 
-Step 5: Create a docker volume  of working directory
+Step 3: Set Working Directory and License Key
+
+```
+export WORK_DIR=$PWD
+export LICENSE_KEY=JMKHA-XWOTZ-AOHGR-AIJNL
+```
+
+
+Step 4: Create a docker volume  of working directory
 
 ```
 docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt o=bind storm_vol
 ```
 
 
-Step 6: Run Docker Container
+Step 5: Run Docker Container
 
 ```
 docker run -it -p 5000:5000 -p 8080:8080 --name storm_gui --restart unless-stopped -v storm_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_gui:latest
 ```
 
-Step 7: Open Link 
+Step 6: Open Link 
 
 - http://127.0.0.1:8080
