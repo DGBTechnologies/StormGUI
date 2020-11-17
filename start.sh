@@ -1,8 +1,11 @@
 #!/bin/bash
 
-/opt/server_build/venv/bin/python /opt/server_build/run.py > /home/server.logs 2>&1 &
+mkdir /home/models
 
-http-server /opt/gui_build > /home/gui.logs 2>&1 &
+mkdir /home/logs
 
-tail -f /home/server.logs -f /home/gui.logs
+/opt/storm_gui/back_end $LICENSE_KEY > /home/logs/back_end.logs 2>&1 &
 
+http-server /opt/storm_gui/front_end > /home/logs/front_end.logs 2>&1 &
+
+tail -f /home/logs/front_end.logs -f /home/logs/back_end.logs
