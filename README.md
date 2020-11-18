@@ -50,3 +50,12 @@ docker run -it -p 5000:5000 -p 8080:8080 --name storm_gui --restart unless-stopp
 Step 6: Open Link 
 
 - http://127.0.0.1:8080
+
+
+
+Note: If you are facing any alert related to license expiry, make sure you are connected to the internet and restart your docker container.
+
+```
+docker container restart storm_gui
+```
+
