@@ -6,7 +6,6 @@ A graphical interface to interact with storm.
 
 - https://docs.google.com/document/d/1PCfdL-rDlCoCoFrcpqL1ML43wg2aBf9ieD6-dzHJ--4/edit?usp=sharing
 
-
 # To run the tool:
 
 Make sure you have already installed docker on your computer and is currently running. 

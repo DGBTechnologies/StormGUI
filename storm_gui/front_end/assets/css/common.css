@@ -25,13 +25,14 @@ label {
 
 .editDeleteIcon {
     font-size: 18px;
-    padding: 5px 0px 5px 0px;
+    padding: 0px;
     cursor: pointer;
 }
 
 textarea {
     resize: vertical;
-  }
+}
+
 
 /* Start Declarations Container CSS */
 
@@ -177,33 +178,41 @@ table td {
     font-size: 14px;
     font-weight: 400;
     height: 10%;
-    padding: 3px;
-    text-align: center;
     color: black;
     border: 1px solid rgb(185, 185, 185);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 table th {
-    background-color:rgb(172, 172, 172);
+    text-align: center;
+    background-color: rgb(172, 172, 172);
     border-top: 0px;
     position: sticky;
     top: 0%;
 }
 
 table td {
+    text-align: left;
     background-color: white;
 }
 
+table td .form-control {
+    height: 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
 
 /* End Table CSS */
+
 
 /* Start PopUps CSS */
 
 .popUpHeading {
-    text-align: center; 
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -225,7 +234,7 @@ table td {
     border-radius: 7px;
     background: rgb(231, 231, 231);
     box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh; 
+    max-height: 90vh;
     overflow: auto;
 }
 
@@ -239,7 +248,7 @@ table td {
     border-radius: 7px;
     background: rgb(231, 231, 231);
     box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh; 
+    max-height: 90vh;
     overflow: auto;
 }
 
@@ -253,7 +262,7 @@ table td {
     background: rgb(231, 231, 231);
     padding: 20px;
     box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh; 
+    max-height: 90vh;
     overflow: auto;
 }
 
@@ -261,5 +270,6 @@ table td {
     font-size: 12px;
     cursor: pointer;
 }
+
 
 /* End PopUps CSS */
