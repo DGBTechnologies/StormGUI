@@ -12,6 +12,14 @@ Make sure you have already installed docker on your computer and is currently ru
 
 Note: These commands are for linux/unix based operating system.
 
+Precondition: Remove volume and container if already exists.
+
+```
+docker container stop storm_gui
+docker container rm storm_gui
+docker volume rm storm_vol
+```
+
 Step 1: Clone the repository
 
 ```
