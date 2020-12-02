@@ -10,7 +10,7 @@ A graphical interface to interact with storm.
 
 Make sure you have already installed docker on your computer and is currently running. 
 
-Precondition: Remove volume and container if already exists.
+Precondition: Remove volume and container if already exists
 
 ```
 docker container stop storm_gui
