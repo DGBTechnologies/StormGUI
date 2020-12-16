@@ -2,6 +2,10 @@
 
 mkdir /home/models
 
-http-server /opt/storm_gui/front_end 2>&1 &
+mkdir /home/logs
 
-tail -f /opt/storm_gui/back_end $LICENSE_KEY
+/opt/storm_gui/back_end $LICENSE_KEY > /home/logs/back_end.logs 2>&1 &
+
+http-server /opt/storm_gui/front_end > /home/logs/front_end.logs 2>&1 &
+
+tail -f /home/logs/front_end.logs -f /home/logs/back_end.logs
