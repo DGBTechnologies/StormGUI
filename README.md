@@ -35,7 +35,7 @@ Step 3: Set Working Directory and License Key
 
 ```
 export WORK_DIR=$PWD
-export LICENSE_KEY=JMKHA-XWOTZ-AOHGR-AIJNL
+export LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR
 ```
 
 
