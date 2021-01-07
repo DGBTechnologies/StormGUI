@@ -1,0 +1,115 @@
+[{
+        "selector": ".EndInterEdge",
+        "css": {
+            "curve-style": "bezier",
+            "control-point-step-size": 80,
+            "target-arrow-shape": "none",
+            "width": 2,
+            "line-color": "gray",
+            "target-arrow-color": "black"
+        }
+    },
+    {
+        "selector": ".InterEndEdge",
+        "css": {
+            "curve-style": "bezier",
+            "control-point-step-size": 80,
+            "target-arrow-shape": "triangle",
+            "width": 2,
+            "line-color": "#42adf5",
+            "target-arrow-color": "black"
+        }
+    },
+    {
+        "selector": ".InterNode",
+        "style": {
+            "background-color": "red",
+            "width": "7px",
+            "height": "7px",
+            "label": ""
+        }
+    },
+    {
+        "selector": ".Node",
+        "style": {
+            "background-color": "white",
+            "border-width": 2,
+            "border-color": "gray",
+            "width": "50px",
+            "height": "50px",
+            "label": "data(name)",
+            "font-size": "12px",
+            "text-wrap": "ellipsis",
+            "text-max-width": "50px",
+            "text-valign": "center"
+        }
+    },
+    {
+        "selector": ".InitialNode",
+        "style": {
+            "border-width": 3,
+            "background-color": "white",
+            "border-color": "green",
+            "width": "50px",
+            "height": "50px",
+            "font-size": "12px",
+            "label": "data(name)",
+            "text-wrap": "ellipsis",
+            "text-max-width": "50px",
+            "text-valign": "center"
+
+        }
+    },
+    {
+        "selector": ".eh-handle",
+        "style": {
+            "background-color": "red",
+            "width": 12,
+            "height": 12,
+            "shape": "ellipse",
+            "overlay-opacity": 0,
+            "border-width": 12,
+            "border-opacity": 0
+        }
+    },
+
+    {
+        "selector": ".eh-hover",
+        "style": {
+            "background-color": "red"
+        }
+    },
+
+    {
+        "selector": ".eh-source",
+        "style": {
+            "border-width": 2,
+            "border-color": "red"
+        }
+    },
+
+    {
+        "selector": ".eh-target",
+        "style": {
+            "border-width": 2,
+            "border-color": "red"
+        }
+    },
+
+    {
+        "selector": ".eh-preview, .eh-ghost-edge",
+        "style": {
+            "line-color": "red",
+            "target-arrow-color": "red",
+            "source-arrow-color": "red"
+        }
+    },
+
+    {
+        "selector": ".eh-ghost-edge.eh-preview-active",
+        "style": {
+            "opacity": 0
+        }
+    }
+
+]
