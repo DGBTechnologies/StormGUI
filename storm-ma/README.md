@@ -1,4 +1,4 @@
-# StormGUI
+# Storm MA
 
 A graphical interface to interact with storm. 
 

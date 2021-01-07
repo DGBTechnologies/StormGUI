@@ -33,6 +33,11 @@ textarea {
     resize: vertical;
 }
 
+.form-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 /* Start Declarations Container CSS */
 
@@ -224,46 +229,35 @@ table td .form-control {
     z-index: 35;
 }
 
-.bigPopUp {
+.popUp {
     position: absolute;
+    padding: 20px;
+    border-radius: 7px;
+    background: rgb(231, 231, 231);
+    box-shadow: 0px 0px 5px #6d6d6d;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.bigPopUp {
     top: 10%;
     left: 25%;
     width: 50%;
     min-width: 550px;
-    padding: 20px;
-    border-radius: 7px;
-    background: rgb(231, 231, 231);
-    box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh;
-    overflow: auto;
 }
 
 .mediumPopUp {
-    position: absolute;
     top: 10%;
     left: 30%;
     width: 35%;
     min-width: 400px;
-    padding: 20px;
-    border-radius: 7px;
-    background: rgb(231, 231, 231);
-    box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh;
-    overflow: auto;
 }
 
-.smallPopup {
-    position: absolute;
+.smallPopUp {
     top: 33%;
     left: 40%;
-    width: 20%;
-    min-width: 250px;
-    border-radius: 7px;
-    background: rgb(231, 231, 231);
-    padding: 20px;
-    box-shadow: 0px 0px 5px #6d6d6d;
-    max-height: 90vh;
-    overflow: auto;
+    width: 25%;
+    min-width: 300px;
 }
 
 .infoIcon {

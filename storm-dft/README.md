@@ -46,7 +46,7 @@ docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt
 Step 5: Run Docker Container
 
 ```
-docker run -it -p 8081:8081 --name storm_dft --restart unless-stopped -v storm_dft_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_dft:latest
+docker run -it -p 8081:8081 -p 6000:5000 --name storm_dft --restart unless-stopped -v storm_dft_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_dft:latest
 ```
 
 Step 6: Open Link 
