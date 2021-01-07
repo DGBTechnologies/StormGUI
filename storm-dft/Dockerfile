@@ -19,7 +19,7 @@ COPY start.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 8081
-EXPOSE 5000
+EXPOSE 6000
 
 
 CMD ["start.sh"]
