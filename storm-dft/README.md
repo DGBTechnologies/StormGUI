@@ -12,6 +12,8 @@ Precondition: Remove volume and container if already exists
 ```
 docker container stop storm_dft
 docker container rm storm_dft
+docker container stop storm_ma
+docker container rm storm_ma
 docker volume rm storm_dft_vol
 ```
 
@@ -46,12 +48,12 @@ docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt
 Step 5: Run Docker Container
 
 ```
-docker run -it -p 8081:8081 -p 6000:6000 --name storm_dft --restart unless-stopped -v storm_dft_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_dft:latest
+docker run -it -p 8080:8080 -p 5000:5000 --name storm_dft --restart unless-stopped -v storm_dft_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_dft:latest
 ```
 
 Step 6: Open Link 
 
-- http://127.0.0.1:8081
+- http://127.0.0.1:8080
 
 
 
