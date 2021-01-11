@@ -47,7 +47,6 @@ Step 4: Create a docker volume  of working directory
 docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt o=bind storm_ma_vol
 ```
 
-
 Step 5: Run Docker Container
 
 ```
@@ -56,7 +55,7 @@ docker run -it -p 5000:5000 -p 8080:8080 --name storm_ma --restart unless-stoppe
 
 Step 6: Open Link 
 
-- http://127.0.0.1:8080
+- http://localhost:8080
 
 
 
