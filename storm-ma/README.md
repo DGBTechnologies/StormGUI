@@ -47,8 +47,6 @@ Step 4: Create a docker volume  of working directory
 docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt o=bind storm_ma_vol
 ```
 
-
-
 Step 5: Run Docker Container
 
 ```
