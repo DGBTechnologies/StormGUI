@@ -36,8 +36,8 @@ docker build -t storm_ma:latest .
 Step 3: Set Working Directory and License Key
 
 ```
-export WORK_DIR=$PWD (set WORK_DIR=%cd%)
-export LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR (set LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR)
+export WORK_DIR=$PWD
+export LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR
 ```
 
 
@@ -46,9 +46,6 @@ Step 4: Create a docker volume  of working directory
 ```
 docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt o=bind storm_ma_vol
 ```
-```
-docker volume create --driver local --opt type=none --opt device=%WORK_DIR% --opt o=bind storm_ma_vol
-```
 
 
 
@@ -56,9 +53,6 @@ Step 5: Run Docker Container
 
 ```
 docker run -it -p 5000:5000 -p 8080:8080 --name storm_ma --restart unless-stopped -v storm_ma_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_ma:latest
-```
-```
-docker run -it -p 5000:5000 -p 8080:8080 --name storm_ma --restart unless-stopped -v storm_ma_vol:/home -e LICENSE_KEY=%LICENSE_KEY% storm_ma:latest
 ```
 
 Step 6: Open Link 
