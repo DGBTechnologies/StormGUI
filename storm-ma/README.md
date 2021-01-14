@@ -13,11 +13,9 @@ Make sure you have already installed docker on your computer and is currently ru
 Precondition: Remove volume and container if already exists
 
 ```
-docker container stop storm_dft
-docker container rm storm_dft
 docker container stop storm_ma
 docker container rm storm_ma
-docker volume rm storm_ma_vol
+docker container stop storm_dft
 ```
 
 Step 1: Clone the repository
@@ -29,7 +27,7 @@ git clone https://github.com/DGBTechnologies/StormGUI.git
 Step 2: Build Docker Image
 
 ```
-cd StormGUI/storm-ma
+cd StormGUI/storm-ma 
 docker build -t storm_ma:latest .
 ```
 
@@ -41,27 +39,37 @@ export LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR
 ```
 
 
-Step 4: Create a docker volume  of working directory
+Step 4: Remove docker volume of working directory if exists
+
+```
+docker volume rm storm_ma_vol
+```
+
+
+
+Step 5: Create a docker volume  of working directory
 
 ```
 docker volume create --driver local --opt type=none --opt device=$WORK_DIR --opt o=bind storm_ma_vol
 ```
 
-Step 5: Run Docker Container
+
+Step 6: Run Docker Container
 
 ```
-docker run -it -p 5000:5000 -p 8080:8080 --name storm_ma --restart unless-stopped -v storm_ma_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_ma:latest
+docker run -it -p 8080:8080 -p 5000:5000 --name storm_ma --restart unless-stopped -v storm_ma_vol:/home -e LICENSE_KEY=$LICENSE_KEY storm_ma:latest
 ```
 
-Step 6: Open Link 
+Step 7: Open Link 
 
-- http://localhost:8080
+- http://127.0.0.1:8080
 
 
 
-Note: If you are facing any alert related to license expiry, make sure you are connected to the internet and restart your docker container.
+Note: To restart your docker container.
 
 ```
+docker container stop storm_dft
 docker container restart storm_ma
 ```
 
