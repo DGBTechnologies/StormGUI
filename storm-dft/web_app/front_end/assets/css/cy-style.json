@@ -136,6 +136,20 @@
 
 	},
 	{
+		"selector": "node.containEvent",
+		"css": {
+			"color": "blue"
+		}
+
+	},
+	{
+		"selector": "node.avoidEvent",
+		"css": {
+			"color": "red"
+		}
+
+	},
+	{
 		"selector": ".eh-hover",
 		"style": {
 			"background-color": "red"
