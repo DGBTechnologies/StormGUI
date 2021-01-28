@@ -138,14 +138,14 @@
 	{
 		"selector": "node.containEvent",
 		"css": {
-			"color": "blue"
+			"color": "red"
 		}
 
 	},
 	{
 		"selector": "node.avoidEvent",
 		"css": {
-			"color": "red"
+			"color": "#228B22"
 		}
 
 	},
