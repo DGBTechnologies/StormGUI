@@ -152,7 +152,7 @@ textarea {
 #declarationTab,
 #rewrdsLabelTab,
 #localsTab,
-#globalsTab {
+#globalsTab{
     cursor: pointer;
     width: 50%;
     /* height: 4vh;

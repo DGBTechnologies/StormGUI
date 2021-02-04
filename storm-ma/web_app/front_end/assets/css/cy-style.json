@@ -1,115 +1,199 @@
-[{
-        "selector": ".EndInterEdge",
-        "css": {
-            "curve-style": "bezier",
-            "control-point-step-size": 80,
-            "target-arrow-shape": "none",
-            "width": 2,
-            "line-color": "gray",
-            "target-arrow-color": "black"
+{
+    "cyInit": [
+        {
+            "selector": ".EndInterEdge",
+            "css": {
+                "curve-style": "bezier",
+                "control-point-step-size": 80,
+                "target-arrow-shape": "none",
+                "width": 2,
+                "line-color": "gray",
+                "target-arrow-color": "black"
+            }
+        },
+        {
+            "selector": ".InterEndEdge",
+            "css": {
+                "curve-style": "bezier",
+                "control-point-step-size": 80,
+                "target-arrow-shape": "triangle",
+                "width": 2,
+                "line-color": "#42adf5",
+                "target-arrow-color": "black"
+            }
+        },
+        {
+            "selector": ".InterNode",
+            "style": {
+                "background-color": "red",
+                "width": "7px",
+                "height": "7px",
+                "label": ""
+            }
+        },
+        {
+            "selector": ".Node",
+            "style": {
+                "background-color": "white",
+                "border-width": 2,
+                "border-color": "gray",
+                "width": "50px",
+                "height": "50px",
+                "label": "data(name)",
+                "font-size": "12px",
+                "text-wrap": "ellipsis",
+                "text-max-width": "50px",
+                "text-valign": "center"
+            }
+        },
+        {
+            "selector": ".InitialNode",
+            "style": {
+                "border-width": 3,
+                "background-color": "white",
+                "border-color": "green",
+                "width": "50px",
+                "height": "50px",
+                "font-size": "12px",
+                "label": "data(name)",
+                "text-wrap": "ellipsis",
+                "text-max-width": "50px",
+                "text-valign": "center"
+            }
+        },
+        {
+            "selector": ".eh-handle",
+            "style": {
+                "background-color": "red",
+                "width": 12,
+                "height": 12,
+                "shape": "ellipse",
+                "overlay-opacity": 0,
+                "border-width": 12,
+                "border-opacity": 0
+            }
+        },
+        {
+            "selector": ".eh-hover",
+            "style": {
+                "background-color": "red"
+            }
+        },
+        {
+            "selector": ".eh-source",
+            "style": {
+                "border-width": 2,
+                "border-color": "red"
+            }
+        },
+        {
+            "selector": ".eh-target",
+            "style": {
+                "border-width": 2,
+                "border-color": "red"
+            }
+        },
+        {
+            "selector": ".eh-preview, .eh-ghost-edge",
+            "style": {
+                "line-color": "red",
+                "target-arrow-color": "red",
+                "source-arrow-color": "red"
+            }
+        },
+        {
+            "selector": ".eh-ghost-edge.eh-preview-active",
+            "style": {
+                "opacity": 0
+            }
         }
+    ],
+    "cyPanZoom": {
+        "zoomFactor": 0.05,
+        "zoomDelay": 45,
+        "minZoom": 0.1,
+        "maxZoom": 10,
+        "fitPadding": 50,
+        "panSpeed": 10,
+        "panDistance": 10,
+        "panDragAreaSize": 75,
+        "panMinPercentSpeed": 0.25,
+        "panInactiveArea": 8,
+        "panIndicatorMinOpacity": 0.5,
+        "zoomOnly": false,
+        "fitSelector": "undefined",
+        "fitAnimationDuration": 1000,
+        "zoomInIcon": "fa fa-plus-circle",
+        "zoomOutIcon": "fa fa-minus-circle",
+        "resetIcon": "fa fa-refresh"
     },
-    {
-        "selector": ".InterEndEdge",
-        "css": {
-            "curve-style": "bezier",
-            "control-point-step-size": 80,
-            "target-arrow-shape": "triangle",
-            "width": 2,
-            "line-color": "#42adf5",
-            "target-arrow-color": "black"
-        }
+    "cyNavigator": {
+        "container": ".cytoscape-navigator",
+        "viewLiveFramerate": 0,
+        "thumbnailEventFramerate": 30,
+        "thumbnailLiveFramerate": false,
+        "dblClickDelay": 200,
+        "removeCustomContainer": true,
+        "rerenderDelay": 100
     },
-    {
-        "selector": ".InterNode",
-        "style": {
-            "background-color": "red",
-            "width": "7px",
-            "height": "7px",
-            "label": ""
-        }
+    "cyGrid": {
+        "snapToGridOnRelease": true,
+        "snapToGridDuringDrag": false,
+        "snapToAlignmentLocationOnRelease": false,
+        "snapToAlignmentLocationDuringDrag": false,
+        "distributionGuidelines": false,
+        "geometricGuideline": false,
+        "initPosAlignment": false,
+        "centerToEdgeAlignment": false,
+        "resize": false,
+        "parentPadding": false,
+        "drawGrid": true,
+        "gridSpacing": 15,
+        "snapToGridCenter": true,
+        "zoomDash": true,
+        "panGrid": false,
+        "gridStackOrder": -1,
+        "gridColor": "#dedede",
+        "lineWidth": 1.0,
+        "guidelinesStackOrder": 4,
+        "guidelinesTolerance": 2.00,
+        "guidelinesStyle": {
+            "strokeStyle": "#8b7d6b",
+            "geometricGuidelineRange": 400,
+            "range": 100,
+            "minDistRange": 10,
+            "distGuidelineOffset": 10,
+            "horizontalDistColor": "#ff0000",
+            "verticalDistColor": "#00ff00",
+            "initPosAlignmentColor": "#0000ff",
+            "lineDash": [
+                0,
+                0
+            ],
+            "horizontalDistLine": [
+                0,
+                0
+            ],
+            "verticalDistLine": [
+                0,
+                0
+            ],
+            "initPosAlignmentLine": [
+                0,
+                0
+            ]
+        },
+        "parentSpacing": -1
     },
-    {
-        "selector": ".Node",
-        "style": {
-            "background-color": "white",
-            "border-width": 2,
-            "border-color": "gray",
-            "width": "50px",
-            "height": "50px",
-            "label": "data(name)",
-            "font-size": "12px",
-            "text-wrap": "ellipsis",
-            "text-max-width": "50px",
-            "text-valign": "center"
-        }
-    },
-    {
-        "selector": ".InitialNode",
-        "style": {
-            "border-width": 3,
-            "background-color": "white",
-            "border-color": "green",
-            "width": "50px",
-            "height": "50px",
-            "font-size": "12px",
-            "label": "data(name)",
-            "text-wrap": "ellipsis",
-            "text-max-width": "50px",
-            "text-valign": "center"
-
-        }
-    },
-    {
-        "selector": ".eh-handle",
-        "style": {
-            "background-color": "red",
-            "width": 12,
-            "height": 12,
-            "shape": "ellipse",
-            "overlay-opacity": 0,
-            "border-width": 12,
-            "border-opacity": 0
-        }
-    },
-
-    {
-        "selector": ".eh-hover",
-        "style": {
-            "background-color": "red"
-        }
-    },
-
-    {
-        "selector": ".eh-source",
-        "style": {
-            "border-width": 2,
-            "border-color": "red"
-        }
-    },
-
-    {
-        "selector": ".eh-target",
-        "style": {
-            "border-width": 2,
-            "border-color": "red"
-        }
-    },
-
-    {
-        "selector": ".eh-preview, .eh-ghost-edge",
-        "style": {
-            "line-color": "red",
-            "target-arrow-color": "red",
-            "source-arrow-color": "red"
-        }
-    },
-
-    {
-        "selector": ".eh-ghost-edge.eh-preview-active",
-        "style": {
-            "opacity": 0
-        }
+    "cyEdgeHandling": {
+        "preview": true,
+        "hoverDelay": 100,
+        "handleNodes": "gate",
+        "snap": false,
+        "snapThreshold": 50,
+        "snapFrequency": 15,
+        "noEdgeEventsInDraw": false,
+        "disableBrowserGestures": true,
+        "handleInDrawMode": false
     }
-
-]
+}
