@@ -1,0 +1,1719 @@
+{
+  "py/object": "markov_model.MarkovModel.MarkovModel",
+  "id": "4d54810c-c63b-4be7-9198-1db0d8ddd2be",
+  "name": "Consensus",
+  "type": "mdp",
+  "comment": "Coin flipping protocol for polynomial randomized consensus",
+  "features": [],
+  "restrictInitial": {
+    "py/tuple": [
+      "",
+      []
+    ]
+  },
+  "constants": [
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "b144b731-4889-4d15-aab0-ca8101fea777",
+      "name": "N",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "4",
+        [
+          {
+            "type": "nc",
+            "lexeme": "4"
+          }
+        ]
+      ],
+      "comment": "number of processes"
+    },
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "f4cbcfd4-03ee-4aa0-85d5-dc6e33e4ceef",
+      "name": "K",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "",
+        []
+      ],
+      "comment": "bounds on random walk"
+    },
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "f60fa7bd-4da2-4baa-8d3f-dd2a8a6ecc74",
+      "name": "range",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "2*(K+1)*N",
+        [
+          {
+            "type": "nc",
+            "lexeme": "2"
+          },
+          {
+            "type": "*",
+            "lexeme": "null"
+          },
+          {
+            "type": "(",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "K"
+          },
+          {
+            "type": "+",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": ")",
+            "lexeme": "null"
+          },
+          {
+            "type": "*",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "8f6a1990-e85d-42f6-8a4b-13f90c005cb8",
+      "name": "counter_init",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "(K+1)*N",
+        [
+          {
+            "type": "(",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "K"
+          },
+          {
+            "type": "+",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": ")",
+            "lexeme": "null"
+          },
+          {
+            "type": "*",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "67c04652-1718-4e0a-afca-72402a99bf3e",
+      "name": "left",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "N",
+        [
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "29ce4611-f406-4ab6-88bc-a22e321710a2",
+      "name": "right",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": [
+        "",
+        []
+      ],
+      "upperBound": [
+        "",
+        []
+      ],
+      "value": [
+        "2*(K+1)*N-N",
+        [
+          {
+            "type": "nc",
+            "lexeme": "2"
+          },
+          {
+            "type": "*",
+            "lexeme": "null"
+          },
+          {
+            "type": "(",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "K"
+          },
+          {
+            "type": "+",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": ")",
+            "lexeme": "null"
+          },
+          {
+            "type": "*",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          },
+          {
+            "type": "-",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    }
+  ],
+  "variables": [
+    {
+      "py/object": "markov_model.Variable.Variable",
+      "id": "74560f51-36ab-477d-a5c9-601922514b64",
+      "name": "counter",
+      "type": "int",
+      "bounded": true,
+      "lowerBound": [
+        "0",
+        [
+          {
+            "type": "nc",
+            "lexeme": "0"
+          }
+        ]
+      ],
+      "upperBound": [
+        "range",
+        [
+          {
+            "type": "id",
+            "lexeme": "range"
+          }
+        ]
+      ],
+      "transient": false,
+      "initialValue": [
+        "counter_init",
+        [
+          {
+            "type": "id",
+            "lexeme": "counter_init"
+          }
+        ]
+      ],
+      "comment": "shared coin"
+    },
+    {
+      "py/object": "markov_model.Variable.Variable",
+      "id": "2173c683-70cd-462f-9b16-15b787d59929",
+      "name": "num_coin_equal_1",
+      "type": "int",
+      "bounded": true,
+      "lowerBound": [
+        "0",
+        [
+          {
+            "type": "nc",
+            "lexeme": "0"
+          }
+        ]
+      ],
+      "upperBound": [
+        "N",
+        [
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "transient": false,
+      "initialValue": [
+        "0",
+        [
+          {
+            "type": "nc",
+            "lexeme": "0"
+          }
+        ]
+      ],
+      "comment": "Stores number of finished processes with coin equal 1"
+    },
+    {
+      "py/object": "markov_model.Variable.Variable",
+      "id": "55b13190-6991-413a-971e-40c953e4df0d",
+      "name": "num_coin_equal_0",
+      "type": "int",
+      "bounded": true,
+      "lowerBound": [
+        "0",
+        [
+          {
+            "type": "nc",
+            "lexeme": "0"
+          }
+        ]
+      ],
+      "upperBound": [
+        "N",
+        [
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "transient": false,
+      "initialValue": [
+        "0",
+        [
+          {
+            "type": "nc",
+            "lexeme": "0"
+          }
+        ]
+      ],
+      "comment": "Stores number of finished processes with coin equal 0"
+    }
+  ],
+  "labels": [
+    {
+      "py/object": "markov_model.Label.Label",
+      "id": "a4fc9be1-b259-4e23-ab7b-5aab73671967",
+      "name": "finished",
+      "value": [
+        "num_coin_equal_1 + num_coin_equal_0 = N",
+        [
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_1"
+          },
+          {
+            "type": "+",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_0"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Label.Label",
+      "id": "307b49e3-20aa-4eb3-b72c-4d7ff1f9343e",
+      "name": "all_coins_equal_0",
+      "value": [
+        "num_coin_equal_0=N",
+        [
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_0"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Label.Label",
+      "id": "16591f94-12f4-4124-a6f3-a1efa27dca30",
+      "name": "all_coins_equal_1",
+      "value": [
+        "num_coin_equal_1=N",
+        [
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_1"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Label.Label",
+      "id": "b3ee16bc-5ad1-4ec3-b4b6-a5eab4e0762a",
+      "name": "agree",
+      "value": [
+        "num_coin_equal_0 = N | num_coin_equal_1 = N",
+        [
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_0"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          },
+          {
+            "type": "|",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "num_coin_equal_1"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "N"
+          }
+        ]
+      ],
+      "comment": ""
+    }
+  ],
+  "rewards": [],
+  "expressions": [],
+  "functions": [],
+  "globalSymbolTable": [],
+  "automata": [
+    {
+      "py/object": "markov_model.Automaton.Automaton",
+      "id": "6f334cae-33e9-4501-942b-12901cf1a87b",
+      "name": "process",
+      "restrictInitial": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "graph": {
+        "py/object": "markov_model.Graph.Graph",
+        "nodes": [
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "a6481c10-829d-4e86-b0da-e743eb2b2389",
+            "name": "flip",
+            "xCordinate": 217.5,
+            "yCordinate": 322.5,
+            "type": "InitialNode",
+            "initialNode": true,
+            "transientValues": [],
+            "outgoing": [
+              "1e1a63f6-0faf-4c83-a8a4-97b1095f18f5"
+            ],
+            "comment": "flip coin"
+          },
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "8e548c27-8cf5-4d5f-abde-c439daee63af",
+            "name": "write",
+            "xCordinate": 592.5,
+            "yCordinate": 187.5,
+            "type": "Node",
+            "initialNode": false,
+            "transientValues": [],
+            "outgoing": [
+              "63ab69c2-ec78-4740-bfe2-f899ae0e0a7d",
+              "e1856dee-7487-4de9-bb36-5fcfd8c39060"
+            ],
+            "comment": "write coin flip result to global counter"
+          },
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "name": "check",
+            "xCordinate": 742.5,
+            "yCordinate": 337.5,
+            "type": "Node",
+            "initialNode": false,
+            "transientValues": [],
+            "outgoing": [
+              "dc2371df-fa97-4136-877e-19efbdea1931",
+              "25f4bece-003b-46dd-8665-e54fbe87ad2d",
+              "dbb09103-b2b1-4ffe-bcf9-1277c9994869"
+            ],
+            "comment": "check if consensus has been reached"
+          },
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "f9828943-e3aa-42ae-8dbe-1032ff5508ac",
+            "name": "finished",
+            "xCordinate": 517.5,
+            "yCordinate": 457.5,
+            "type": "Node",
+            "initialNode": false,
+            "transientValues": [],
+            "outgoing": [
+              "bbd5885b-0268-4da4-aec0-4c68f0e37762"
+            ],
+            "comment": "indicates that consensus has been reached"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "7b92100d-ec02-4c35-b949-104c776f4175",
+            "name": "inter-node-7b92100d-ec02-4c35-b949-104c776f4175",
+            "xCordinate": 412.5,
+            "yCordinate": 262.5,
+            "outgoing": [
+              "a03b3244-8339-4be6-989d-77ee5102ccbd",
+              "42917078-91cc-4465-8f0d-e6c091a17ac5"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "f6d76387-cbdc-408f-b2c1-c707d35d9a48",
+            "name": "inter-node-f6d76387-cbdc-408f-b2c1-c707d35d9a48",
+            "xCordinate": 652.5,
+            "yCordinate": 262.5,
+            "outgoing": [
+              "cbcd7f5f-61d7-493f-bd3c-be18a50635c3"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "bfef3133-876e-4195-b470-2464bf7909d0",
+            "name": "inter-node-bfef3133-876e-4195-b470-2464bf7909d0",
+            "xCordinate": 697.5,
+            "yCordinate": 232.5,
+            "outgoing": [
+              "22aa2f93-7675-4f84-a5b4-36ad1797ab90"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "439394b1-45c3-4e8a-823c-579eaf405df4",
+            "name": "inter-node-439394b1-45c3-4e8a-823c-579eaf405df4",
+            "xCordinate": 502.5,
+            "yCordinate": 382.5,
+            "outgoing": [
+              "421510e0-722c-41ff-93e3-5c8cba5c70ed"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "80efb817-b192-47e5-bb60-6e9a046df75a",
+            "name": "inter-node-80efb817-b192-47e5-bb60-6e9a046df75a",
+            "xCordinate": 652.5,
+            "yCordinate": 412.5,
+            "outgoing": [
+              "f5ea99d3-84c7-484a-850f-2cff4e9ab7cd"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "6e9a0509-376b-4e1c-a69d-3bdb85e2fe42",
+            "name": "inter-node-6e9a0509-376b-4e1c-a69d-3bdb85e2fe42",
+            "xCordinate": 487.5,
+            "yCordinate": 337.5,
+            "outgoing": [
+              "63bf687a-bc83-4179-a57b-5860c4162589"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "e592e30d-eda7-4f7b-95f3-fbf1f4f56e8c",
+            "name": "inter-node-e592e30d-eda7-4f7b-95f3-fbf1f4f56e8c",
+            "xCordinate": 562.5,
+            "yCordinate": 502.5,
+            "outgoing": [
+              "48dea6bd-a147-458b-9e36-f56a98bedb4a"
+            ],
+            "type": "InterNode"
+          }
+        ],
+        "edges": [
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "1e1a63f6-0faf-4c83-a8a4-97b1095f18f5",
+            "name": "end-inter-1e1a63f6-0faf-4c83-a8a4-97b1095f18f5",
+            "sourceNodeId": "a6481c10-829d-4e86-b0da-e743eb2b2389",
+            "destinationNodeId": "7b92100d-ec02-4c35-b949-104c776f4175",
+            "type": "EndInterEdge",
+            "comment": "flip coin",
+            "guard": [
+              "true",
+              [
+                {
+                  "type": "true",
+                  "lexeme": "null"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "a03b3244-8339-4be6-989d-77ee5102ccbd",
+            "name": "inter-end-a03b3244-8339-4be6-989d-77ee5102ccbd",
+            "sourceNodeId": "7b92100d-ec02-4c35-b949-104c776f4175",
+            "destinationNodeId": "8e548c27-8cf5-4d5f-abde-c439daee63af",
+            "type": "InterEndEdge",
+            "comment": "flip tails",
+            "probability": [
+              "0.5",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "0.5"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "16288026-5c75-4fcf-a7a3-8f41f828876c",
+                    "name": "coin",
+                    "value": [
+                      "0",
+                      [
+                        {
+                          "type": "nc",
+                          "lexeme": "0"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "42917078-91cc-4465-8f0d-e6c091a17ac5",
+            "name": "inter-end-42917078-91cc-4465-8f0d-e6c091a17ac5",
+            "sourceNodeId": "7b92100d-ec02-4c35-b949-104c776f4175",
+            "destinationNodeId": "8e548c27-8cf5-4d5f-abde-c439daee63af",
+            "type": "InterEndEdge",
+            "comment": "flip heads",
+            "probability": [
+              "0.5",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "0.5"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "5f88f390-cd55-4c85-93dc-41e6326972f7",
+                    "name": "coin",
+                    "value": [
+                      "1",
+                      [
+                        {
+                          "type": "nc",
+                          "lexeme": "1"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "63ab69c2-ec78-4740-bfe2-f899ae0e0a7d",
+            "name": "end-inter-63ab69c2-ec78-4740-bfe2-f899ae0e0a7d",
+            "sourceNodeId": "8e548c27-8cf5-4d5f-abde-c439daee63af",
+            "destinationNodeId": "f6d76387-cbdc-408f-b2c1-c707d35d9a48",
+            "type": "EndInterEdge",
+            "comment": "write tails",
+            "guard": [
+              "coin=0 & counter>0",
+              [
+                {
+                  "type": "id",
+                  "lexeme": "coin"
+                },
+                {
+                  "type": "=",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "nc",
+                  "lexeme": "0"
+                },
+                {
+                  "type": "&",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": ">",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "nc",
+                  "lexeme": "0"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "cbcd7f5f-61d7-493f-bd3c-be18a50635c3",
+            "name": "inter-end-cbcd7f5f-61d7-493f-bd3c-be18a50635c3",
+            "sourceNodeId": "f6d76387-cbdc-408f-b2c1-c707d35d9a48",
+            "destinationNodeId": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "type": "InterEndEdge",
+            "comment": "decrement counter, reset coin to add regularity",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "762c4876-742d-465f-a235-64028292fd66",
+                    "name": "counter",
+                    "value": [
+                      "counter-1",
+                      [
+                        {
+                          "type": "id",
+                          "lexeme": "counter"
+                        },
+                        {
+                          "type": "-",
+                          "lexeme": "null"
+                        },
+                        {
+                          "type": "nc",
+                          "lexeme": "1"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "33fb8633-c4ee-4eed-b094-832b9060429a",
+                    "name": "coin",
+                    "value": [
+                      "0",
+                      [
+                        {
+                          "type": "nc",
+                          "lexeme": "0"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "e1856dee-7487-4de9-bb36-5fcfd8c39060",
+            "name": "end-inter-e1856dee-7487-4de9-bb36-5fcfd8c39060",
+            "sourceNodeId": "8e548c27-8cf5-4d5f-abde-c439daee63af",
+            "destinationNodeId": "bfef3133-876e-4195-b470-2464bf7909d0",
+            "type": "EndInterEdge",
+            "comment": "write heads",
+            "guard": [
+              "coin=1 & counter < range",
+              [
+                {
+                  "type": "id",
+                  "lexeme": "coin"
+                },
+                {
+                  "type": "=",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                },
+                {
+                  "type": "&",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": "<",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "range"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "22aa2f93-7675-4f84-a5b4-36ad1797ab90",
+            "name": "inter-end-22aa2f93-7675-4f84-a5b4-36ad1797ab90",
+            "sourceNodeId": "bfef3133-876e-4195-b470-2464bf7909d0",
+            "destinationNodeId": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "type": "InterEndEdge",
+            "comment": "increment counter, reset coin to add regularity",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "d1b9c539-a496-455d-b68b-8fad21536b11",
+                    "name": "counter",
+                    "value": [
+                      "counter+1",
+                      [
+                        {
+                          "type": "id",
+                          "lexeme": "counter"
+                        },
+                        {
+                          "type": "+",
+                          "lexeme": "null"
+                        },
+                        {
+                          "type": "nc",
+                          "lexeme": "1"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "02ab1c7b-718a-4929-b113-b15e7fc0e636",
+                    "name": "coin",
+                    "value": [
+                      "0",
+                      [
+                        {
+                          "type": "nc",
+                          "lexeme": "0"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "dc2371df-fa97-4136-877e-19efbdea1931",
+            "name": "end-inter-dc2371df-fa97-4136-877e-19efbdea1931",
+            "sourceNodeId": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "destinationNodeId": "439394b1-45c3-4e8a-823c-579eaf405df4",
+            "type": "EndInterEdge",
+            "comment": "decide tails",
+            "guard": [
+              "counter <= left",
+              [
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": "<=",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "left"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "421510e0-722c-41ff-93e3-5c8cba5c70ed",
+            "name": "inter-end-421510e0-722c-41ff-93e3-5c8cba5c70ed",
+            "sourceNodeId": "439394b1-45c3-4e8a-823c-579eaf405df4",
+            "destinationNodeId": "f9828943-e3aa-42ae-8dbe-1032ff5508ac",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "df40a7ba-a0e0-4e3b-bc0d-b14bd0ed2f27",
+                    "name": "num_coin_equal_0",
+                    "value": [
+                      "num_coin_equal_0+1",
+                      [
+                        {
+                          "type": "id",
+                          "lexeme": "num_coin_equal_0"
+                        },
+                        {
+                          "type": "+",
+                          "lexeme": "null"
+                        },
+                        {
+                          "type": "nc",
+                          "lexeme": "1"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "25f4bece-003b-46dd-8665-e54fbe87ad2d",
+            "name": "end-inter-25f4bece-003b-46dd-8665-e54fbe87ad2d",
+            "sourceNodeId": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "destinationNodeId": "80efb817-b192-47e5-bb60-6e9a046df75a",
+            "type": "EndInterEdge",
+            "comment": "decide heads",
+            "guard": [
+              "counter >= right",
+              [
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": ">=",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "right"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "f5ea99d3-84c7-484a-850f-2cff4e9ab7cd",
+            "name": "inter-end-f5ea99d3-84c7-484a-850f-2cff4e9ab7cd",
+            "sourceNodeId": "80efb817-b192-47e5-bb60-6e9a046df75a",
+            "destinationNodeId": "f9828943-e3aa-42ae-8dbe-1032ff5508ac",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "40df2535-67b2-44be-b7cd-8e91715fa044",
+                    "name": "num_coin_equal_1",
+                    "value": [
+                      "num_coin_equal_1 + 1",
+                      [
+                        {
+                          "type": "id",
+                          "lexeme": "num_coin_equal_1"
+                        },
+                        {
+                          "type": "+",
+                          "lexeme": "null"
+                        },
+                        {
+                          "type": "nc",
+                          "lexeme": "1"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "dbb09103-b2b1-4ffe-bcf9-1277c9994869",
+            "name": "end-inter-dbb09103-b2b1-4ffe-bcf9-1277c9994869",
+            "sourceNodeId": "fa67b9c2-7732-446c-9edf-4279af7312c7",
+            "destinationNodeId": "6e9a0509-376b-4e1c-a69d-3bdb85e2fe42",
+            "type": "EndInterEdge",
+            "comment": "flip again",
+            "guard": [
+              "counter > left & counter < right",
+              [
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": ">",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "left"
+                },
+                {
+                  "type": "&",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "counter"
+                },
+                {
+                  "type": "<",
+                  "lexeme": "null"
+                },
+                {
+                  "type": "id",
+                  "lexeme": "right"
+                }
+              ]
+            ],
+            "action": "",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "63bf687a-bc83-4179-a57b-5860c4162589",
+            "name": "inter-end-63bf687a-bc83-4179-a57b-5860c4162589",
+            "sourceNodeId": "6e9a0509-376b-4e1c-a69d-3bdb85e2fe42",
+            "destinationNodeId": "a6481c10-829d-4e86-b0da-e743eb2b2389",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": []
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "bbd5885b-0268-4da4-aec0-4c68f0e37762",
+            "name": "end-inter-bbd5885b-0268-4da4-aec0-4c68f0e37762",
+            "sourceNodeId": "f9828943-e3aa-42ae-8dbe-1032ff5508ac",
+            "destinationNodeId": "e592e30d-eda7-4f7b-95f3-fbf1f4f56e8c",
+            "type": "EndInterEdge",
+            "comment": "loop (all loop together when done)",
+            "guard": [
+              "true",
+              [
+                {
+                  "type": "true",
+                  "lexeme": "null"
+                }
+              ]
+            ],
+            "action": "done",
+            "rate": [
+              "",
+              []
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "48dea6bd-a147-458b-9e36-f56a98bedb4a",
+            "name": "inter-end-48dea6bd-a147-458b-9e36-f56a98bedb4a",
+            "sourceNodeId": "e592e30d-eda7-4f7b-95f3-fbf1f4f56e8c",
+            "destinationNodeId": "f9828943-e3aa-42ae-8dbe-1032ff5508ac",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": [
+              "1",
+              [
+                {
+                  "type": "nc",
+                  "lexeme": "1"
+                }
+              ]
+            ],
+            "indexAssignments": []
+          }
+        ]
+      },
+      "variables": [
+        {
+          "py/object": "markov_model.Variable.Variable",
+          "id": "53be9e2c-5d14-4357-8000-24d7721e49a7",
+          "name": "coin",
+          "type": "int",
+          "bounded": true,
+          "lowerBound": [
+            "0",
+            [
+              {
+                "type": "nc",
+                "lexeme": "0"
+              }
+            ]
+          ],
+          "upperBound": [
+            "1",
+            [
+              {
+                "type": "nc",
+                "lexeme": "1"
+              }
+            ]
+          ],
+          "transient": false,
+          "initialValue": [
+            "0",
+            [
+              {
+                "type": "nc",
+                "lexeme": "0"
+              }
+            ]
+          ],
+          "comment": "the current value of the local coin"
+        }
+      ],
+      "expressions": [],
+      "functions": [],
+      "labels": [],
+      "rewards": [],
+      "localSymbolTable": [],
+      "comment": "models a single process"
+    }
+  ],
+  "properties": [
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "cc81af5d-6cad-4d8a-a52b-91fa1a2c49ae",
+      "name": "c1",
+      "operation": "values",
+      "property": [
+        "P>=1 [ F \"finished\" ]",
+        [
+          {
+            "type": "P",
+            "lexeme": "null"
+          },
+          {
+            "type": ">=",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "F",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "finished"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "With probability 1, all processes finish the protocol"
+    },
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "51d9911c-b5ec-4702-80ab-fe17f90b4816",
+      "name": "c2",
+      "operation": "values",
+      "property": [
+        "Pmin=? [ F \"finished\"&\"all_coins_equal_1\" ]",
+        [
+          {
+            "type": "P",
+            "lexeme": "null"
+          },
+          {
+            "type": "min",
+            "lexeme": "null"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "?",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "F",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "finished"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "&",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "all_coins_equal_1"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "Minimum probability that the protocol finishes with all coins equal to v=1"
+    },
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "27f125e2-99f2-4e2c-b6ee-9bfa51da3903",
+      "name": "disagree",
+      "operation": "values",
+      "property": [
+        "Pmax=? [ F \"finished\"&!\"agree\" ]",
+        [
+          {
+            "type": "P",
+            "lexeme": "null"
+          },
+          {
+            "type": "max",
+            "lexeme": "null"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "?",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "F",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "finished"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "&",
+            "lexeme": "null"
+          },
+          {
+            "type": "!",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "agree"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "Maximum probability of finishing protocol with coins not all equal"
+    },
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "5d7db1f1-70b4-4b55-9775-2c91373dec32",
+      "name": "steps_max",
+      "operation": "values",
+      "property": [
+        "R{\"1\"}[transition]max=? [ F \"finished\" ]",
+        [
+          {
+            "type": "R",
+            "lexeme": "null"
+          },
+          {
+            "type": "{",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "}",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "transition",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          },
+          {
+            "type": "max",
+            "lexeme": "null"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "?",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "F",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "finished"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "Maximum expected steps to finish"
+    },
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "d1b270aa-82f3-417b-a60c-18c8c50e150a",
+      "name": "steps_min",
+      "operation": "values",
+      "property": [
+        "R{\"1\"}[transition]min=? [ F \"finished\" ]",
+        [
+          {
+            "type": "R",
+            "lexeme": "null"
+          },
+          {
+            "type": "{",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "nc",
+            "lexeme": "1"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "}",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "transition",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          },
+          {
+            "type": "min",
+            "lexeme": "null"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "?",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "F",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "finished"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "Minimum expected steps to finish"
+    }
+  ],
+  "elements": [
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "33166679-763b-43da-b6f4-371f4265d620",
+      "name": "proc1",
+      "modelId": "6f334cae-33e9-4501-942b-12901cf1a87b",
+      "modelName": "process"
+    },
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "14e30d6e-cde2-4f5d-add4-c07d53105f8e",
+      "name": "proc2",
+      "modelId": "6f334cae-33e9-4501-942b-12901cf1a87b",
+      "modelName": "process"
+    },
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "ee008503-7c86-42fa-a9fd-b7703e99034f",
+      "name": "proc3",
+      "modelId": "6f334cae-33e9-4501-942b-12901cf1a87b",
+      "modelName": "process"
+    },
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "cbf6cd17-76ea-45e1-a9ae-4fbc4cd18478",
+      "name": "proc4",
+      "modelId": "6f334cae-33e9-4501-942b-12901cf1a87b",
+      "modelName": "process"
+    }
+  ],
+  "syncs": [
+    {
+      "py/object": "markov_model.Sync.Sync",
+      "id": "87ace8be-fd2c-4a27-a364-c96de511284b",
+      "actions": {
+        "33166679-763b-43da-b6f4-371f4265d620": "done",
+        "14e30d6e-cde2-4f5d-add4-c07d53105f8e": "done",
+        "ee008503-7c86-42fa-a9fd-b7703e99034f": "done",
+        "cbf6cd17-76ea-45e1-a9ae-4fbc4cd18478": "done"
+      }
+    }
+  ],
+  "configuration": {
+    "engine": {
+      "values": [
+        "sparse",
+        "hybrid",
+        "dd",
+        "dd-to-sparse"
+      ],
+      "selected": "sparse"
+    },
+    "bisimulation": {
+      "values": [
+        true,
+        false
+      ],
+      "selected": false
+    }
+  }
+}

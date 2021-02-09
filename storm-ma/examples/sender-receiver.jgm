@@ -1,0 +1,1041 @@
+{
+  "py/object": "markov_model.MarkovModel.MarkovModel",
+  "id": "9286eaee-5994-11eb-a7f0-0242ac110002",
+  "name": "sender-receiver",
+  "type": "ma",
+  "comment": "",
+  "features": [],
+  "restrictInitial": {
+    "py/tuple": [
+      " true ",
+      [
+        {
+          "type": "true",
+          "lexeme": true
+        }
+      ]
+    ]
+  },
+  "constants": [
+    {
+      "py/object": "markov_model.Constant.Constant",
+      "id": "9286eed6-5994-11eb-a7f0-0242ac110002",
+      "name": "lambda",
+      "type": "real",
+      "bounded": false,
+      "lowerBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "upperBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "value": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "comment": ""
+    }
+  ],
+  "variables": [
+    {
+      "py/object": "markov_model.Variable.Variable",
+      "id": "9286f052-5994-11eb-a7f0-0242ac110002",
+      "name": "t",
+      "type": "int",
+      "bounded": false,
+      "lowerBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "upperBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "transient": true,
+      "initialValue": {
+        "py/tuple": [
+          " 0 ",
+          [
+            {
+              "type": "nc",
+              "lexeme": "0"
+            }
+          ]
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Variable.Variable",
+      "id": "9286f192-5994-11eb-a7f0-0242ac110002",
+      "name": "p",
+      "type": "real",
+      "bounded": false,
+      "lowerBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "upperBound": {
+        "py/tuple": [
+          "",
+          []
+        ]
+      },
+      "transient": true,
+      "initialValue": {
+        "py/tuple": [
+          " 0 ",
+          [
+            {
+              "type": "nc",
+              "lexeme": "0"
+            }
+          ]
+        ]
+      },
+      "comment": ""
+    }
+  ],
+  "labels": [],
+  "rewards": [
+    {
+      "py/object": "markov_model.Reward.Reward",
+      "id": "1c9a425e-e962-4b6a-8385-4cd311b9b83e",
+      "name": "penalty",
+      "type": "state and transition",
+      "expression": [
+        "p",
+        [
+          {
+            "type": "id",
+            "lexeme": "p"
+          }
+        ]
+      ],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Reward.Reward",
+      "id": "4234c46f-3ad8-46fe-ac3a-77d43ca3390d",
+      "name": "step",
+      "type": "transition",
+      "expression": [
+        "1",
+        [
+          {
+            "type": "nc",
+            "lexeme": "1"
+          }
+        ]
+      ],
+      "comment": ""
+    }
+  ],
+  "expressions": [],
+  "functions": [],
+  "globalSymbolTable": [],
+  "automata": [
+    {
+      "py/object": "markov_model.Automaton.Automaton",
+      "id": "9286f340-5994-11eb-a7f0-0242ac110002",
+      "name": "A_S",
+      "restrictInitial": {
+        "py/tuple": [
+          "true",
+          [
+            {
+              "type": "true",
+              "lexeme": "null"
+            }
+          ]
+        ]
+      },
+      "graph": {
+        "py/object": "markov_model.Graph.Graph",
+        "nodes": [
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "9286f480-5994-11eb-a7f0-0242ac110002",
+            "name": "wait",
+            "xCordinate": 322.5,
+            "yCordinate": 232.5,
+            "type": "InitialNode",
+            "initialNode": true,
+            "transientValues": [],
+            "outgoing": [
+              "9286f796-5994-11eb-a7f0-0242ac110002"
+            ],
+            "comment": ""
+          },
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "9286f534-5994-11eb-a7f0-0242ac110002",
+            "name": "send",
+            "xCordinate": 607.5,
+            "yCordinate": 232.5,
+            "type": "Node",
+            "initialNode": false,
+            "outgoing": [
+              "9286fc3c-5994-11eb-a7f0-0242ac110002"
+            ],
+            "transientValues": [
+              {
+                "py/object": "markov_model.Assignment.Assignment",
+                "id": "9286f5fc-5994-11eb-a7f0-0242ac110002",
+                "name": "p",
+                "value": {
+                  "py/tuple": [
+                    " 1 ",
+                    [
+                      {
+                        "type": "nc",
+                        "lexeme": "1"
+                      }
+                    ]
+                  ]
+                }
+              }
+            ],
+            "comment": ""
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "9286f8a4-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "xCordinate": 487.5,
+            "yCordinate": 157.5,
+            "outgoing": [
+              "9286fa34-5994-11eb-a7f0-0242ac110002"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "9286fd40-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "xCordinate": 487.5,
+            "yCordinate": 292.5,
+            "outgoing": [
+              "9286fe58-5994-11eb-a7f0-0242ac110002",
+              "9287010a-5994-11eb-a7f0-0242ac110002"
+            ],
+            "type": "InterNode"
+          }
+        ],
+        "edges": [
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "9286f796-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "9286f480-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "9286f8a4-5994-11eb-a7f0-0242ac110002",
+            "type": "EndInterEdge",
+            "comment": "",
+            "guard": {
+              "py/tuple": [
+                "true",
+                [
+                  {
+                    "type": "true",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "action": "",
+            "rate": {
+              "py/tuple": [
+                " lambda ",
+                [
+                  {
+                    "type": "id",
+                    "lexeme": "lambda"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "9286fa34-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "9286f8a4-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "9286f534-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                "1",
+                [
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": []
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "9286fc3c-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "9286f534-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "9286fd40-5994-11eb-a7f0-0242ac110002",
+            "type": "EndInterEdge",
+            "comment": "",
+            "guard": {
+              "py/tuple": [
+                "true",
+                [
+                  {
+                    "type": "true",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "action": "send",
+            "rate": {
+              "py/tuple": [
+                "",
+                []
+              ]
+            }
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "9286fe58-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "9286fd40-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "9286f480-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                " (  2  /  3  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "2"
+                  },
+                  {
+                    "type": "/",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "3"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "9286ffd4-5994-11eb-a7f0-0242ac110002",
+                    "name": "t",
+                    "value": {
+                      "py/tuple": [
+                        " 1 ",
+                        [
+                          {
+                            "type": "nc",
+                            "lexeme": "1"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "9287010a-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "9286fd40-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "9286f480-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                " (  1  /  3  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  },
+                  {
+                    "type": "/",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "3"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "92870254-5994-11eb-a7f0-0242ac110002",
+                    "name": "t",
+                    "value": {
+                      "py/tuple": [
+                        " 2 ",
+                        [
+                          {
+                            "type": "nc",
+                            "lexeme": "2"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "py/tuple": [
+                  1,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "928702fe-5994-11eb-a7f0-0242ac110002",
+                    "name": "p",
+                    "value": {
+                      "py/tuple": [
+                        " (  p  +  1  ) ",
+                        [
+                          {
+                            "type": "(",
+                            "lexeme": "null"
+                          },
+                          {
+                            "type": "id",
+                            "lexeme": "p"
+                          },
+                          {
+                            "type": "+",
+                            "lexeme": "null"
+                          },
+                          {
+                            "type": "nc",
+                            "lexeme": "1"
+                          },
+                          {
+                            "type": ")",
+                            "lexeme": "null"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "variables": [],
+      "expressions": [],
+      "functions": [],
+      "labels": [],
+      "rewards": [],
+      "localSymbolTable": [],
+      "comment": ""
+    },
+    {
+      "py/object": "markov_model.Automaton.Automaton",
+      "id": "92870560-5994-11eb-a7f0-0242ac110002",
+      "name": "A_R",
+      "restrictInitial": {
+        "py/tuple": [
+          " (  m  =  0  ) ",
+          [
+            {
+              "type": "(",
+              "lexeme": "null"
+            },
+            {
+              "type": "id",
+              "lexeme": "m"
+            },
+            {
+              "type": "=",
+              "lexeme": "null"
+            },
+            {
+              "type": "nc",
+              "lexeme": "0"
+            },
+            {
+              "type": ")",
+              "lexeme": "null"
+            }
+          ]
+        ]
+      },
+      "graph": {
+        "py/object": "markov_model.Graph.Graph",
+        "nodes": [
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "92870844-5994-11eb-a7f0-0242ac110002",
+            "name": "idle",
+            "xCordinate": 307.5,
+            "yCordinate": 412.5,
+            "type": "InitialNode",
+            "initialNode": true,
+            "transientValues": [],
+            "outgoing": [
+              "928709c0-5994-11eb-a7f0-0242ac110002",
+              "92870c54-5994-11eb-a7f0-0242ac110002"
+            ],
+            "comment": ""
+          },
+          {
+            "py/object": "markov_model.EndNode.EndNode",
+            "id": "928708e4-5994-11eb-a7f0-0242ac110002",
+            "name": "busy",
+            "xCordinate": 652.5,
+            "yCordinate": 412.5,
+            "type": "Node",
+            "initialNode": false,
+            "transientValues": [],
+            "outgoing": [
+              "92871276-5994-11eb-a7f0-0242ac110002"
+            ],
+            "comment": ""
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "92870a4c-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "xCordinate": 232.5,
+            "yCordinate": 412.5,
+            "outgoing": [
+              "92870af6-5994-11eb-a7f0-0242ac110002"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "92870d4e-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "xCordinate": 517.5,
+            "yCordinate": 322.5,
+            "outgoing": [
+              "92870e66-5994-11eb-a7f0-0242ac110002",
+              "928710d2-5994-11eb-a7f0-0242ac110002"
+            ],
+            "type": "InterNode"
+          },
+          {
+            "py/object": "markov_model.Node.Node",
+            "id": "92871370-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "xCordinate": 517.5,
+            "yCordinate": 472.5,
+            "outgoing": [
+              "92871708-5994-11eb-a7f0-0242ac110002"
+            ],
+            "type": "InterNode"
+          }
+        ],
+        "edges": [
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "928709c0-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92870844-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92870a4c-5994-11eb-a7f0-0242ac110002",
+            "type": "EndInterEdge",
+            "comment": "",
+            "guard": {
+              "py/tuple": [
+                "true",
+                [
+                  {
+                    "type": "true",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "action": "reject",
+            "rate": {
+              "py/tuple": [
+                "",
+                []
+              ]
+            }
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "92870af6-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92870a4c-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92870844-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                "1",
+                [
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "92870b82-5994-11eb-a7f0-0242ac110002",
+                    "name": "p",
+                    "value": {
+                      "py/tuple": [
+                        " 3 ",
+                        [
+                          {
+                            "type": "nc",
+                            "lexeme": "3"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "92870c54-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92870844-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92870d4e-5994-11eb-a7f0-0242ac110002",
+            "type": "EndInterEdge",
+            "comment": "",
+            "guard": {
+              "py/tuple": [
+                "true",
+                [
+                  {
+                    "type": "true",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "action": "accept",
+            "rate": {
+              "py/tuple": [
+                "",
+                []
+              ]
+            }
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "92870e66-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92870d4e-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "928708e4-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                " (  9  /  10  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "9"
+                  },
+                  {
+                    "type": "/",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "10"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  1,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "92870fc4-5994-11eb-a7f0-0242ac110002",
+                    "name": "m",
+                    "value": {
+                      "py/tuple": [
+                        " t ",
+                        [
+                          {
+                            "type": "id",
+                            "lexeme": "t"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "928710d2-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92870d4e-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92870844-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                " (  1  /  10  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  },
+                  {
+                    "type": "/",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "10"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": []
+          },
+          {
+            "py/object": "markov_model.EndToInter.EndToInter",
+            "id": "92871276-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "928708e4-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92871370-5994-11eb-a7f0-0242ac110002",
+            "type": "EndInterEdge",
+            "comment": "",
+            "guard": {
+              "py/tuple": [
+                " (  m  >  0  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "id",
+                    "lexeme": "m"
+                  },
+                  {
+                    "type": ">",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "0"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            },
+            "action": "",
+            "rate": {
+              "py/tuple": [
+                " (  1  /  m  ) ",
+                [
+                  {
+                    "type": "(",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  },
+                  {
+                    "type": "/",
+                    "lexeme": "null"
+                  },
+                  {
+                    "type": "id",
+                    "lexeme": "m"
+                  },
+                  {
+                    "type": ")",
+                    "lexeme": "null"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "py/object": "markov_model.InterToEnd.InterToEnd",
+            "id": "92871708-5994-11eb-a7f0-0242ac110002",
+            "name": "",
+            "sourceNodeId": "92871370-5994-11eb-a7f0-0242ac110002",
+            "destinationNodeId": "92870844-5994-11eb-a7f0-0242ac110002",
+            "type": "InterEndEdge",
+            "comment": "",
+            "probability": {
+              "py/tuple": [
+                "1",
+                [
+                  {
+                    "type": "nc",
+                    "lexeme": "1"
+                  }
+                ]
+              ]
+            },
+            "indexAssignments": [
+              {
+                "py/tuple": [
+                  0,
+                  {
+                    "py/object": "markov_model.Assignment.Assignment",
+                    "id": "928717f8-5994-11eb-a7f0-0242ac110002",
+                    "name": "m",
+                    "value": {
+                      "py/tuple": [
+                        " 0 ",
+                        [
+                          {
+                            "type": "nc",
+                            "lexeme": "0"
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "variables": [
+        {
+          "py/object": "markov_model.Variable.Variable",
+          "id": "92870718-5994-11eb-a7f0-0242ac110002",
+          "name": "m",
+          "type": "int",
+          "bounded": false,
+          "lowerBound": {
+            "py/tuple": [
+              "",
+              []
+            ]
+          },
+          "upperBound": {
+            "py/tuple": [
+              "",
+              []
+            ]
+          },
+          "transient": false,
+          "initialValue": {
+            "py/tuple": [
+              "",
+              []
+            ]
+          },
+          "comment": ""
+        }
+      ],
+      "expressions": [],
+      "functions": [],
+      "labels": [],
+      "rewards": [],
+      "localSymbolTable": [],
+      "comment": ""
+    }
+  ],
+  "properties": [
+    {
+      "py/object": "markov_model.Property.Property",
+      "id": "0eecfb41-96a4-475f-b1ef-b8795ca9b1cc",
+      "name": "mean_penalty",
+      "operation": "values",
+      "property": [
+        "R{\"p\"}min=? [LRA] ",
+        [
+          {
+            "type": "R",
+            "lexeme": "null"
+          },
+          {
+            "type": "{",
+            "lexeme": "null"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "id",
+            "lexeme": "p"
+          },
+          {
+            "type": "\"",
+            "lexeme": "null"
+          },
+          {
+            "type": "}",
+            "lexeme": "null"
+          },
+          {
+            "type": "min",
+            "lexeme": "null"
+          },
+          {
+            "type": "=",
+            "lexeme": "null"
+          },
+          {
+            "type": "?",
+            "lexeme": "null"
+          },
+          {
+            "type": "[",
+            "lexeme": "null"
+          },
+          {
+            "type": "LRA",
+            "lexeme": "null"
+          },
+          {
+            "type": "]",
+            "lexeme": "null"
+          }
+        ]
+      ],
+      "stateLabel": [
+        "initial",
+        []
+      ],
+      "comment": "The minimal long-run average penalty in the long run"
+    }
+  ],
+  "elements": [
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "92871a3c-5994-11eb-a7f0-0242ac110002",
+      "name": "A_S",
+      "modelId": "9286f340-5994-11eb-a7f0-0242ac110002",
+      "modelName": "A_S"
+    },
+    {
+      "py/object": "markov_model.Element.Element",
+      "id": "92871b0e-5994-11eb-a7f0-0242ac110002",
+      "name": "A_R",
+      "modelId": "92870560-5994-11eb-a7f0-0242ac110002",
+      "modelName": "A_R"
+    }
+  ],
+  "syncs": [
+    {
+      "py/object": "markov_model.Sync.Sync",
+      "id": "92871bb8-5994-11eb-a7f0-0242ac110002",
+      "actions": {
+        "92871a3c-5994-11eb-a7f0-0242ac110002": "send",
+        "92871b0e-5994-11eb-a7f0-0242ac110002": "accept"
+      }
+    },
+    {
+      "py/object": "markov_model.Sync.Sync",
+      "id": "92871c58-5994-11eb-a7f0-0242ac110002",
+      "actions": {
+        "92871a3c-5994-11eb-a7f0-0242ac110002": "send",
+        "92871b0e-5994-11eb-a7f0-0242ac110002": "reject"
+      }
+    }
+  ],
+  "configuration": {
+    "engine": {
+      "values": [
+        "sparse",
+        "hybrid",
+        "dd",
+        "dd-to-sparse"
+      ],
+      "selected": "sparse"
+    },
+    "bisimulation": {
+      "values": [
+        true,
+        false
+      ],
+      "selected": false
+    }
+  }
+}
