@@ -15,7 +15,6 @@ Precondition: Remove volume and container if already exists
 ```
 docker container stop storm_ma
 docker container rm storm_ma
-docker container stop storm_dft
 ```
 
 Step 1: Clone the repository
@@ -69,7 +68,6 @@ Step 7: Open Link
 Note: To restart your docker container.
 
 ```
-docker container stop storm_dft
 docker container restart storm_ma
 ```
 

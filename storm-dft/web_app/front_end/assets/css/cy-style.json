@@ -14,7 +14,6 @@
 	  {
 		"selector": "edge",
 		"css": {
-      "label": "data(label)",
 		  "curve-style": "bezier",
 		  "control-point-step-size": 80,
 		  "target-arrow-shape": "triangle",
@@ -128,7 +127,7 @@
 		"css": {
 		  "color": "red"
 		}
-
+  
 	  },
 	  {
 		"selector": ".eh-handle",
@@ -272,4 +271,5 @@
 	  "disableBrowserGestures": true,
 	  "handleInDrawMode": false
 	}
-}
+  }
+  
