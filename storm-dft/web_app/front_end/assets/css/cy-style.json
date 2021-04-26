@@ -6,6 +6,8 @@
 		  "label": "data(label)",
 		  "height": 59,
 		  "width": 48,
+      "text-wrap": "ellipsis",
+      "text-max-width": 200,
 		  "shape": "rectangle",
 		  "background-color": "white",
 		  "background-fit": "cover"
@@ -14,6 +16,7 @@
 	  {
 		"selector": "edge",
 		"css": {
+      "label": "data(label)",
 		  "curve-style": "bezier",
 		  "control-point-step-size": 80,
 		  "target-arrow-shape": "triangle",
@@ -113,7 +116,8 @@
 		"css": {
 		  "height": 66.65,
 		  "width": 50,
-		  "background-image": "../assets/images/dft_block.png"
+		  "background-image": "../assets/images/dft_block.png",
+      "z-index":0
 		}
 	  },
 	  {
@@ -127,8 +131,24 @@
 		"css": {
 		  "color": "red"
 		}
-  
+
 	  },
+    {
+      "selector": ":parent",
+      "css": {
+        "background-opacity": 0.33,
+        "border-width": 3,
+				"border-color": "#585858",
+				"border-style": "dashed",
+        "z-compound-depth":"auto"
+      }
+    },
+    {
+      "selector":"node.cy-expand-collapse-expanded-node",
+      "css":{
+        "background-color": ""
+      }
+    },
 	  {
 		"selector": ".eh-handle",
 		"style": {
@@ -145,6 +165,7 @@
 		"selector": "node.topLevel",
 		"css": {
 		  "font-weight": "bold",
+		  "color": "red",
 		  "font-size": "25"
 		}
 	  },
@@ -263,13 +284,20 @@
 	"cyEdgeHandling": {
 	  "preview": true,
 	  "hoverDelay": 100,
-	  "handleNodes": "gate",
+	  "handleNodes": "node[!parent]",
 	  "snap": false,
 	  "snapThreshold": 50,
 	  "snapFrequency": 15,
 	  "noEdgeEventsInDraw": false,
 	  "disableBrowserGestures": true,
 	  "handleInDrawMode": false
-	}
+	},
+  "cyExpandCollapse":{
+    "layoutBy":null,
+    "fisheye": false,
+    "animate": false,
+    "undoable": false,
+    "cueEnabled": false,
+    "zIndex": 0
   }
-  
+}
