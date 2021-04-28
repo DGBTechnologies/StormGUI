@@ -39,6 +39,13 @@ textarea {
 }
 
 
+/* mandatory field icon */
+.mandatory{
+  color: red;
+  font-size: large;
+}
+
+
 /* Start Declarations Container CSS */
 
 .declaration-component {

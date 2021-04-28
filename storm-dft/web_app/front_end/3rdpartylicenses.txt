@@ -311,7 +311,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 cytoscape
 MIT
-Copyright (c) 2016-2020, The Cytoscape Consortium.
+Copyright (c) 2016-2021, The Cytoscape Consortium.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal in
@@ -665,7 +665,7 @@ MIT
 
 jquery
 MIT
-Copyright JS Foundation and other contributors, https://js.foundation/
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
