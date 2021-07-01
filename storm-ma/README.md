@@ -9,6 +9,8 @@ Make sure you have already installed docker on your computer and is currently ru
 
 Precondition: Remove volume and container if already exists
 
+Browser Compatibility: Chrome
+
 ```
 docker container stop storm_ma
 docker container rm storm_ma
