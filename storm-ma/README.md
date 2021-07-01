@@ -2,9 +2,6 @@
 
 A graphical interface to interact with storm. 
 
-# Documentation
-
-- https://docs.google.com/document/d/1PCfdL-rDlCoCoFrcpqL1ML43wg2aBf9ieD6-dzHJ--4/edit?usp=sharing
 
 # To run the tool:
 
@@ -15,6 +12,7 @@ Precondition: Remove volume and container if already exists
 ```
 docker container stop storm_ma
 docker container rm storm_ma
+docker volume rm storm_ma_vol
 ```
 
 Step 1: Clone the repository
@@ -37,15 +35,6 @@ export WORK_DIR=$PWD
 export LICENSE_KEY=MDADD-EOTFZ-ZDLDS-SPQMR
 ```
 
-
-Step 4: Remove docker volume of working directory if exists
-
-```
-docker volume rm storm_ma_vol
-```
-
-
-
 Step 5: Create a docker volume  of working directory
 
 ```
@@ -62,7 +51,6 @@ docker run -it -p 8080:8080 -p 5000:5000 --name storm_ma --restart unless-stoppe
 Step 7: Open Link 
 
 - http://127.0.0.1:8080
-
 
 
 Note: To restart your docker container.

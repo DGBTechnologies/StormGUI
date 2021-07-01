@@ -1,7 +1,7 @@
 {
     "cyInit": [
         {
-            "selector": ".EndInterEdge",
+            "selector": ".end_to_inter_edge",
             "css": {
                 "curve-style": "bezier",
                 "control-point-step-size": 80,
@@ -12,7 +12,7 @@
             }
         },
         {
-            "selector": ".InterEndEdge",
+            "selector": ".inter_to_end_edge",
             "css": {
                 "curve-style": "bezier",
                 "control-point-step-size": 80,
@@ -23,16 +23,19 @@
             }
         },
         {
-            "selector": ".InterNode",
+            "selector": ".inter_node",
             "style": {
                 "background-color": "red",
                 "width": "7px",
                 "height": "7px",
-                "label": ""
+                "label": "data(name)",
+                "text-valign": "top",
+                "text-max-width": "150px",
+                "text-wrap": "ellipsis"
             }
         },
         {
-            "selector": ".Node",
+            "selector": ".end_node",
             "style": {
                 "background-color": "white",
                 "border-width": 2,
@@ -47,7 +50,7 @@
             }
         },
         {
-            "selector": ".InitialNode",
+            "selector": ".initial_node",
             "style": {
                 "border-width": 3,
                 "background-color": "white",
